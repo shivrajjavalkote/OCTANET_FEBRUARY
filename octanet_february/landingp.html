@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    h1 {
+        height: 50px;
+        text-align: center;
+        background-color: rgb(48, 48, 48);
+        padding-top: 1px;
+        font-family: emoji;
+        background: rgb(48, 48, 48);
+        color: aliceblue;
+        margin-top: -4px;
+    }
+
+    footer {
+        height: 40px;
+        width: 1260px;
+        text-align: center;
+        background-color: black;
+        font-size: 15px;
+        padding-top: 10px;
+        color: aliceblue;
+    }
+
+    div {
+        text-align: center;
+        padding-bottom: -10px;
+    }
+
+
+
+    img {
+        height: 480px;
+        width: 600px;
+        background-size: cover;
+
+    }
+
+    p {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+        text-align: justify;
+        text-justify: inter-word;
+        width: 1200px;
+        padding-left: 100px;
+
+    }
+
+    dot {
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(36, 37, 34);
+        padding: 0.5em;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+    h2{
+        background-color: black;
+        color: aliceblue;
+        height: 50px;
+        text-align: center;
+        padding-top: 10px;
+        font-family: itallic;
+    }
+   
+</style>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="nav">
+       <h2>Food Court</h2>
+
+        <nav>
+
+            
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Menuv</a>
+            <a href="#">Contact</a>
+        </nav>
+        
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <img src="icecream.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="noodles.jpg">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="sandwich.jpg">
+            </div>
+        </div>
+
+
+        <!-- The dots/circles -->
+        <div class="dot">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+
+            <div>
+
+                <div>
+                    <h1 class="best">Best Shef's</h1>
+                    <div class="grow">
+                        <img src="shef.jpeg" alt="Image Description">
+                    </div>
+                    <p>Our hotel takes great pride in the
+                        exceptional dining experience we offer, thanks to the expertise of our head chef. With years of
+                        experience and a passion for culinary perfection, our chef creates mouth-watering dishes that
+                        are
+                        both
+                        visually stunning and incredibly delicious.<br><br>
+
+                        Our chef carefully selects the freshest, highest quality ingredients to create unique and
+                        innovative
+                        menus that cater to a variety of tastes and preferences. From perfectly cooked steaks to
+                        delicate
+                        seafood dishes, our chef uses their knowledge and creativity to create dishes that will
+                        tantalize
+                        your
+                        taste buds.</p><br />
+                </div>
+            </div>
+
+            <div>
+                <h1 class="best">Fresh Food</h1><br>
+                <div class="grow">
+                    <img src="freshfood.jpg" alt="Image Description">
+                </div><br>
+                <p>At our hotel, we take great pride in
+                    offering
+                    the freshest and highest quality food to our guests. We believe that the key to a memorable dining
+                    experience is using only the freshest and most flavorful ingredients available.<br><br>
+
+                    That's why our team works closely with local farmers and producers to source the best possible
+                    ingredients
+                    for our menus. We use only seasonal produce, hand-picked daily, to ensure that our dishes are
+                    bursting
+                    with
+                    flavor and nutrients. Our meats and seafood are also sourced from trusted suppliers who share our
+                    commitment
+                    to quality and sustainability.</p><br />
+            </div>
+        </div>
+
+        <div>
+            <h1 class="best">Fast Delivery</h1><br>
+            <div class="grow">
+                <img src="fooddelivery.jpg" alt="Image Description">
+            </div><br>
+            <p> At our hotel, we understand that time is of the essence.
+                That's why we're committed to delivering our delicious food to you as quickly and efficiently as
+                possible.
+                Whether you're looking to grab a quick bite before a meeting or enjoy a leisurely meal in the comfort of
+                your room,
+                we've got you covered.<br><br>
+
+                Our fast delivery service is designed to get your food to you in no time at all. Our experienced kitchen
+                staff work tirelessly to prepare your meals as quickly as possible, without ever sacrificing the quality
+                or
+                taste of our dishes. Our delivery team then works just as hard to ensure that your food is delivered to
+                you
+                in a timely and courteous manner.</p><br />
+        </div>
+    </div>
+    <div>
+        <footer>
+            &copy; 2024 All over world. All rights reserved.
+        </footer>
+    </div>
+
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>
